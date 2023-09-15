@@ -1,19 +1,19 @@
 NAME = benbaker76/test-service
 VERSION = 0.2
 
-all: package
+all: build
 
-package:
-	@docker run --rm -v $(PWD):/src -v /var/run/docker.sock:/var/run/docker.sock benbaker76/golang-builder $(NAME):$(VERSION)
+build:
+	@docker build -t $(NAME):$(VERSION) .
 
-test_package: 
+run: 
 	@docker run -p 8080:8080 --rm $(NAME):$(VERSION)
 
 tag: 
-	@docker tag $(NAME):$(VERSION) $(NAME):latest 
+	@docker tag $(NAME):$(VERSION) $(NAME):latest
     
 push: 
 	@docker push $(NAME)
 	
 rmi: 
-	@docker rmi $(NAME):$(VERSION) $(NAME):latest 
+	@docker rmi $(NAME):$(VERSION) $(NAME):latest
