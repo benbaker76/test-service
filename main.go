@@ -1,4 +1,4 @@
-package main // import "github.com/fabriziopandini/test-service"
+package main // import "github.com/benbaker76/test-service"
 
 import (
 	"fmt"

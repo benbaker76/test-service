@@ -5,7 +5,7 @@ Simple container that expose a service with common endpoints for testing a servi
 ## Usage
 
 ```bash
-docker run -d -p 8080:8080 --rm fabriziopandini/service
+docker run -d -p 8080:8080 --rm benbaker76/service
 ```
 
 ** /echo endpoint **
