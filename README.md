@@ -64,3 +64,16 @@ curl localhost:8080/exit/1
 ```
 
 Exit from the service and returns the given code
+
+## Kubernetes
+
+```bash
+$ kubectl apply -f test-service.yaml
+$ kubectl expose deployment test-service --type=NodePort
+$ kubectl get service
+NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes     ClusterIP   10.96.0.1       <none>        443/TCP          44m
+test-service   NodePort    10.103.145.50   <none>        8080:31562/TCP   9s
+$ curl --data "hello echo" mycluster-cp:31562/echo
+hello echo
+```
