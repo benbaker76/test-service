@@ -1,4 +1,4 @@
-NAME = benbaker76/test-service
+NAME = benbaker76/test-service-golang
 VERSION = 0.2
 
 all: build

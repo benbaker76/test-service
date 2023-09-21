@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: test-service
-          image: docker.io/benbaker76/test-service:latest
+          image: docker.io/benbaker76/test-service-golang:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
